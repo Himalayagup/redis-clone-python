@@ -16,4 +16,18 @@ setup(
     author_email="himalaya.gupta3@gmail.com",
     url="https://github.com/Himalayagup/redis-clone-python",
     license="MIT",
+    python_requires='>=3.6',  # Minimum Python version required
+    install_requires=[
+        # List of project dependencies
+    ],
+    classifiers=[
+        'Development Status :: 3 - Alpha',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+    ],
 )
