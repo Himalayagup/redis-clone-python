@@ -45,6 +45,9 @@ To start the server with default settings (without key persistency):
 redis-clone
 ```
 
+- Default PORT - 6379
+- Default HOST - 127.0.0.1
+
 To specify the host and port:
 
 ```bash
