@@ -1,4 +1,4 @@
-# My Redis Clone
+# Redis Clone - Python
 
 ## Overview
 
@@ -16,7 +16,7 @@
 1. **Clone the Repository**
 
     ```bash
-    git clone https://github.com/yourusername/my_redis_clone.git
+    git clone https://github.com/Himalayagup/redis_clone_python.git
     cd my_redis_clone
     ```
 
@@ -27,7 +27,9 @@
     ```bash
     pip install .
     ```
-    or
+    
+    Alternatively, for development mode (editable install):
+
     ```bash
     pip install e .
     ```
@@ -37,25 +39,25 @@
 
 ### Start the Server
 
-To start the server without key persistency:
+To start the server with default settings (without key persistency):
 
 ```bash
 redis-clone
 ```
 
-To start the server on specific IP and PORT:
+To specify the host and port:
 
 ```bash
 redis-clone --host 127.0.0.1 --port 6379
 ```
 
-With key persistency:
+To enable key persistency (saves data to store.json and loads on restart):
 
 ```bash
 redis-clone --persist
 ```
 
-To use CLI mode:
+To enter CLI mode if server is running:
 
 
 ```bash
@@ -69,14 +71,17 @@ redis-clone --cli
 - `DEL <key>`: Deletes the key. Returns 1 if deleted, 0 if not found.
 - `EXPIRE <key> <timeout>`: Sets expiration time for the key.
 - `STOP`: Shuts down the server.
-- `EXIT`: Exits the CLI.
+- `EXIT`: Exits CLI mode.
 
 ## Key Persistency
-Enable key persistency with the --persist flag. It saves data to store.json and loads it on restart.
+To enable key persistency, use the `--persistent` flag when starting the server. This saves data to store.json and loads it upon restart, allowing data to be retained between server restarts.
 
-## Examples to connect from a Client
-Three examples have been provided to connect to server from Node.js or Python
+## Example Clients
+Three example clients are provided (in connection-example folder) to demonstrate how to connect to the server from different environments:
 
-- `JS`: js-example.js
-- `Python- Simple`: option-1.py
-- `Python- Custom Redis Client`: option-2.py
+- JavaScript: `js-example.js`
+- Python (Simple): `option-1.py`
+- Python (Custom Redis Client): `option-2.py`
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
