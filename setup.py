@@ -6,10 +6,10 @@ setup(
     packages=find_packages(),
     entry_points={
         'console_scripts': [
-            'redis-clone=code.server:main',
+            'redis-clone=redis_clone_python.main:main',
         ],
     },
-    description="A Redis-like server implemented in Python",
+    description="A Redis-like server implemented in Python with CLI",
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     author="Himalaya Gupta",
