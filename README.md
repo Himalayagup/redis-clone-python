@@ -27,6 +27,11 @@
     ```bash
     pip install .
     ```
+    or
+    ```bash
+    pip install e .
+    ```
+
 
 ## Usage
 
@@ -68,3 +73,10 @@ redis-clone --cli
 
 ## Key Persistency
 Enable key persistency with the --persist flag. It saves data to store.json and loads it on restart.
+
+## Examples to connect from a Client
+Three examples have been provided to connect to server from Node.js or Python
+
+- `JS`: js-example.js
+- `Python- Simple`: option-1.py
+- `Python- Custom Redis Client`: option-2.py
