@@ -3,7 +3,7 @@
 import socket
 
 class RedisCloneClient:
-    def __init__(self, host='127.0.0.1', port=6380):
+    def __init__(self, host='127.0.0.1', port=6379):
         self.host = host
         self.port = port
     

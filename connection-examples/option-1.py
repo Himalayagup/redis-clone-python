@@ -4,7 +4,7 @@
 
 import socket
 
-def send_command(command, host='127.0.0.1', port=6380):
+def send_command(command, host='127.0.0.1', port=6379):
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client.connect((host, port))
     client.send(command.encode('utf-8'))
