@@ -3,6 +3,15 @@ from .server import start_server
 from .client import send_command
 
 def cli_mode(host, port):
+    """
+    Runs the command-line interface (CLI) mode for interacting with the server.
+    Users can enter commands to interact with the server and type 'exit' to quit CLI mode.
+    
+    Args:
+        host (str): The host address of the server.
+        port (int): The port number on which the server is listening.
+    """
+
     print("Entering CLI mode. Type your commands or 'exit' to quit.")
     
     while True:
@@ -22,6 +31,10 @@ def cli_mode(host, port):
             break
 
 def main():
+    """
+    Parses command-line arguments and starts the server or CLI mode based on the arguments.
+    The server can be started with or without persistence and the CLI mode can be enabled.
+    """
     parser = argparse.ArgumentParser(description="Start a Redis-like server with CLI")
     parser.add_argument('--host', default="127.0.0.1", help="Host to bind the server")
     parser.add_argument('--port', type=int, default=6379, help="Port to bind the server")

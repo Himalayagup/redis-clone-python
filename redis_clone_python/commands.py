@@ -4,10 +4,20 @@ from .utils import lock, shutdown_flag
 try:
     from .utils import store, expiry_store
 except:
+    # Default to empty store if import fails
     store = {}
     expiry_store = {}
 
 def execute_command(command):
+    """
+    Executes the given command by dispatching it to the appropriate handler.
+    
+    Args:
+        command (list): The command and its arguments as a list of strings.
+    
+    Returns:
+        str: The response to the command.
+    """
     if not command:
         return "ERROR: Empty command"
     
@@ -30,6 +40,15 @@ def execute_command(command):
         return "ERROR: Unknown command"
 
 def set_command(command):
+    """
+    Sets a key-value pair in the store.
+    
+    Args:
+        command (list): The command and its arguments as a list of strings.
+    
+    Returns:
+        str: The response to the command.
+    """
     if len(command) < 3:
         return "ERROR: SET command requires key and value"
     
@@ -41,6 +60,15 @@ def set_command(command):
     return "OK"
 
 def get_command(command):
+    """
+    Retrieves the value for a given key from the store.
+    
+    Args:
+        command (list): The command and its arguments as a list of strings.
+    
+    Returns:
+        str: The value for the key or None if the key does not exist or has expired.
+    """
     if len(command) < 2:
         return "ERROR: GET command requires a key"
     
@@ -57,6 +85,15 @@ def get_command(command):
             return None
 
 def del_command(command):
+    """
+    Deletes a key from the store.
+    
+    Args:
+        command (list): The command and its arguments as a list of strings.
+    
+    Returns:
+        str: "1" if the key was deleted, "0" if the key did not exist.
+    """
     if len(command) < 2:
         return "ERROR: DEL command requires a key"
     
@@ -72,6 +109,15 @@ def del_command(command):
             return "0"
 
 def expire_command(command):
+    """
+    Sets an expiration time for a key.
+    
+    Args:
+        command (list): The command and its arguments as a list of strings.
+    
+    Returns:
+        str: "1" if the expiration was set, "0" if the key did not exist.
+    """
     if len(command) < 3:
         return "ERROR: EXPIRE command requires a key and timeout"
     
@@ -86,4 +132,13 @@ def expire_command(command):
             return "0"
 
 def ping_command(command):
+    """
+    Responds to a PING command with PONG.
+    
+    Args:
+        command (list): The command and its arguments as a list of strings.
+    
+    Returns:
+        str: "PONG"
+    """
     return "PONG"
